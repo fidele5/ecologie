@@ -366,6 +366,26 @@ class membre
 			return "error";
 		
 	}
+
+	public function comptearebours()
+    {
+        $annee = date('Y');
+        $fin = mktime(0, 0, 0, 3, 31, $annee);
+        if ($fin <= time()) return "end";
+		else
+		{
+            $tps_restant = $fin - time(); 
+            $i_restantes = $tps_restant / 60;
+            $H_restantes = $i_restantes / 60;
+            $d_restants = $H_restantes / 24;
+            $s_restantes = floor($tps_restant % 60); // Secondes restantes
+            $i_restantes = floor($i_restantes % 60); // Minutes restantes
+            $H_restantes = floor($H_restantes % 24); // Heures restantes
+            $d_restants = floor($d_restants); // Jours restantss
+
+            setlocale(LC_ALL, 'fr_FR');
+        }
+    }
 }
 
 ?>

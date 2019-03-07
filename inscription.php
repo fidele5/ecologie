@@ -1,6 +1,16 @@
-<?php
-	session_name("inscription");
-	session_start();
+<?php	
+	require_once "membre.php";
+	$mb = new membre();
+	if($mb->comptearebours()=='end')
+	{
+		$activate = "btn btn-primary disabled";
+		$_SESSION['error'] = "L'inscription est deja terminé dommage pour vous";
+		echo $mb->comptearebours();
+	}
+	else{
+		$activate = "btn btn-primary";
+		$_SESSION['error'] = null;
+	}
 
 	if (isset($_SESSION['err'])) 
 	{
@@ -76,7 +86,7 @@
 			<div class="col-md-4">
 				<h1>Inscrivez vous</h1>
 				<div class="<?=$er?>">
-				<strong><?=$_SESSION['error']?></strong>
+				<?=$_SESSION['error']?>
 				</div>
 				<form action="traitement.php" method="post" enctype="multipart/form-data">
 					<div class="<?= $state1 ?>">
@@ -158,7 +168,7 @@
 						<span class="help-block"><?= $_SESSION['error10']?></span>
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Enregistrer" class="btn btn-primary">
+						<input type="submit" value="Enregistrer" class="<?=$activate?>">
 					</div>
 					
 				</form>
