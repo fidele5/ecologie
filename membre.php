@@ -370,7 +370,7 @@ class membre
 	public function comptearebours()
     {
         $annee = date('Y');
-        $fin = mktime(0, 0, 0, 3, 31, $annee);
+        $fin = mktime(0, 0, 0, 3, 7, $annee);
         if ($fin <= time()) return "end";
 		else
 		{

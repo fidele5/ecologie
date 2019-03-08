@@ -4,12 +4,14 @@
 	if($mb->comptearebours()=='end')
 	{
 		$activate = "btn btn-primary disabled";
+		$actiate2 =  "form-control disabled";
 		$_SESSION['error'] = "L'inscription est deja terminé dommage pour vous";
 		echo $mb->comptearebours();
 	}
 	else{
 		$activate = "btn btn-primary";
 		$_SESSION['error'] = null;
+		$actiate2 = "form-control";
 	}
 
 	if (isset($_SESSION['err'])) 
@@ -91,60 +93,60 @@
 				<form action="traitement.php" method="post" enctype="multipart/form-data">
 					<div class="<?= $state1 ?>">
 						<label>Nom</label>
-						<input type="text" name="nom" class="form-control" placeholder="Votre nom" id="idSucces" value="<?=$nom?>">
+						<input type="text" name="nom" class="<?=$actiate2?>" placeholder="Votre nom" id="idSucces" value="<?=$nom?>">
 						<span class="<?=$a?>"></span>
 						<span class="help-block"><?= $_SESSION['error1']?></span>
 					</div>
 					<div class="<?= $state2 ?>">
 						<label>Postom</label>
-						<input type="text" name="postnom" class="form-control" placeholder="Votre postnom" value="<?=$postnom?>">
+						<input type="text" name="postnom" class="<?=$actiate2?>" placeholder="Votre postnom" value="<?=$postnom?>">
 						<span class="<?=$b?>"></span>
 						<span class="help-block"><?= $_SESSION['error2']?></span>
 					</div>
 					<div class="<?= $state3 ?>">
 						<label>prenom</label>
-						<input type="text" name="prenom" class="form-control" placeholder="Votre prenom" value="<?=$prenom?>">
+						<input type="text" name="prenom" class="<?=$actiate2?>" placeholder="Votre prenom" value="<?=$prenom?>">
 						<span class="<?=$c?>"></span>
 						<span class="help-block"><?= $_SESSION['error3']?></span>
 					</div>
 					<div class="<?= $state9 ?>">
 						<label>Matricule</label>
-						<input type="text" name="matr" class="form-control" placeholder="Votre matricule" value="<?=$matr?>">
+						<input type="text" name="matr" class="<?=$actiate2?>" placeholder="Votre matricule" value="<?=$matr?>">
 						<span class="<?=$h?>"></span>
 						<span class="help-block"><?= $_SESSION['error9']?></span>
 					</div>
 					<div class="<?= $state4 ?>">
 						<label>Email</label>
-						<input type="text" name="email" class="form-control" placeholder="Votre email" value="<?=$email?>">
+						<input type="text" name="email" class="<?=$actiate2?>" placeholder="Votre email" value="<?=$email?>">
 						<span class="<?=$d?>"></span>
 						<span class="help-block"><?= $_SESSION['error4']?></span>
 					</div>
 					<div class="<?= $state7 ?>">
 						<label>Telephone</label>
-						<input type="text" name="tel" class="form-control" placeholder="Votre numero de Telephone" value="<?=$tel?>">
+						<input type="text" name="tel" class="<?=$actiate2?>" placeholder="Votre numero de Telephone" value="<?=$tel?>">
 						<span class="<?=$g?>"></span>
 						<span class="help-block"><?= $_SESSION['error7']?></span>
 					</div>
 					<div class="<?= $state8 ?>">
 						<label>Photo</label>
-						<input type="file" name="photo" class="form-control">
+						<input type="file" name="photo" class="<?=$actiate2?>">
 						<span class="help-block"><?= $_SESSION['error8']?></span>
 					</div>
 					<div class="<?= $state5 ?>">
 						<label>Date de naissance</label>
-						<input type="date" name="date" class="form-control" placeholder="date de naissance" value="<?=$date?>">
+						<input type="date" name="date" class="<?=$actiate2?>" placeholder="date de naissance" value="<?=$date?>">
 						<span class="<?=$e?>"></span>
 						<span class="help-block"><?= $_SESSION['error5']?></span>
 					</div>
 					<div class="<?= $state6 ?>">
 						<label>Motivation</label>
-						<textarea id="textarea" type="textarea" class="form-control" name="motivation" placeholder="entrer la motivation" value=""><?=$motivation?></textarea>
+						<textarea id="textarea" type="textarea" class="<?=$actiate2?>" name="motivation" placeholder="entrer la motivation" value=""><?=$motivation?></textarea>
 						<span class="<?=$f?>"></span>
 						<span class="help-block"><?= $_SESSION['error6']?></span>
 					</div>
 					<div class="<?= $state10 ?>">
 						<label for="select">Select : </label>
-						<select id="select" class="form-control" name="promotion">
+						<select id="select" class="<?=$actiate2?>" name="promotion">
 							<option value="PREPA">PREPARATOIRE</option>
 					        <option value="G1">PREMIER GRADUAT</option>
 					        <optgroup label="GENIE LOGICIEL">
