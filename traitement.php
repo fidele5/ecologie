@@ -61,7 +61,7 @@
 	// verification de la promotion
 	if ($control->checkprom($prom) == "emptyprom"){$_SESSION['error10'] = "<em>Vous devez renseigner la promotion</em><br>"; $i++;}
 	elseif ($control->checkprom($prom) == "invalid") {$_SESSION['error10'] = "<em>Vous n'etes pas de cette promotion</em><br>"; $i++;}
-	elseif($control->Verifin($prom) == "full"){$_SESSION['error'] = "<em>Vous ne puvez pas vous inscrire car le nombre total par promotion est deja atteint</em><br>"; $i++;}
+	elseif($control->Verifin($prom) == "full"){$_SESSION['error10'] = "<em>Vous ne puvez pas vous inscrire car le nombre total par promotion est deja atteint</em><br>"; $i++;}
 	else $_SESSION['prom'] = $control->prom;
 
 	//verification de l'email

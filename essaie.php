@@ -57,5 +57,48 @@
             }
         }
 
-        echo checkprom('G2GEST','16PK390');
+        echo checkprom('G2GEST','16PK390')."<br>";
+    function getall($prom)
+	{
+		try 
+		{
+            $connexion = new PDO("mysql:host=localhost;dbname=ecologie", "root", "", null);
+			$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		} 
+		catch (Exception $e) 
+		{
+			die('Erreur : ' . $e->getMessage());
+		}
+
+		$result = $connexion->prepare("SELECT COUNT(*) FROM etudiants WHERE promotion = :prom");
+		$result->bindValue(':prom', $prom, PDO::PARAM_STR);
+		$result->execute();
+		$aff2 = $result->fetchColumn();
+		return $aff2;
+	}
+    function Verifin($prom)
+	{
+		try 
+		{
+            $connexion = new PDO("mysql:host=localhost;dbname=ecologie", "root", "", null);
+			$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		} 
+		catch (Exception $e) 
+		{
+			die('Erreur : ' . $e->getMessage());
+		}
+
+		$result = $connexion->prepare("SELECT COUNT(*) FROM ecologie WHERE membre_promotion = :prom");
+		$result->bindValue(':prom', $prom, PDO::PARAM_STR);
+		$result->execute();
+        $aff = $result->fetchColumn();
+        echo $aff.'<br>';
+		$pourc = ($aff/getall($prom))*100; 
+		if($pourc > 20){
+			return 'full';
+        }
+        else return $pourc;
+    }
+    echo Verifin('G2SI')."<br>";
+    echo getall('G2SI');
 ?>

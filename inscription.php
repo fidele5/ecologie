@@ -25,7 +25,6 @@
 		$tel =$_SESSION['tel'];
 		$matr = $_SESSION['matr'];
 		$prom = $_SESSION['prom'];
-		$ech = $_SESSION['error'];
 	}
 	else
 	{
@@ -38,7 +37,6 @@
 		$tel = null;
 		$matr = null;
 		$prom = null;
-		$_SESSION['error'] = null;
 		$_SESSION['error1'] = null;
 		$_SESSION['error2'] = null;
 		$_SESSION['error3'] = null;
