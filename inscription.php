@@ -117,7 +117,7 @@
 					</div>
 					<div class="<?= $state4 ?>">
 						<label>Email</label>
-						<input type="text" name="email" class="<?=$actiate2?>" placeholder="Votre email" value="<?=$email?>">
+						<input type="text" name="email" id="email" class="<?=$actiate2?>" placeholder="Votre email" value="<?=$email?>">
 						<span class="<?=$d?>"></span>
 						<span class="help-block"><?= $_SESSION['error4']?></span>
 					</div>
@@ -180,3 +180,20 @@
 	</div>
 </body>
 </html>
+<script>
+	$(document).ready(function(){
+		$('#email').change(function(){
+			var email = $('#email').val();
+			if (email != '') {
+				$.ajax({
+					url:"traitement.php";
+					method:"POST",
+					data:{email:email},
+					success:function(data){
+						alert('ok');
+					}
+				});
+			}
+		});
+	});
+</script>
