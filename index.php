@@ -20,15 +20,16 @@
 							<!-- Nav -->
 								<nav id="nav">
 									<ul>
-										<li class="current"><a href="#">Connexion</a></li>
-										<li class="current"><a href="#">Créer un Compte</a></li>
+										<li class="current"><a href="connexion.php">Connexion</a></li>
+										<li class="current"><a href="inscription.php">Créer un Compte</a></li>
 									</ul>
 								</nav>
 
 						</div>
 					<!-- CTA -->
-						&copy; Para-Academique d'Esis 2019
-					 
+					<center>
+					&copy; Para-Academique d'Esis 2019
+					</center>
 				</div>
 				<div class="col-md-3">
 				</div>
