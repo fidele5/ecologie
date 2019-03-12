@@ -29,10 +29,12 @@
 						$mb->getAllmembers();
 					?>
 				</tbody>
-				
+
 			</table>
-			<button id="exportButton" class="btn btn-lg btn-danger clearfix"><span class="fa fa-file-pdf-o"></span> Exporter PDF</button> ou 
+			<button id="exportButton" class="btn btn-lg btn-danger clearfix"><span class="fa fa-file-pdf-o"></span> Exporter PDF</button> ou
 			<button id="exportButton2" class="btn btn-lg btn-success clearfix"><span class="fa fa-file-excel-o"></span> Exporter Excel</button>
+			<button class="btn btn-lg btn-primary"><span class="fa fa-hand-o-left"></span><a href="page.php" style="color: white;"> Retour</a></button>
+
 		</div>
 	</div>
 	<script type="text/javascript">

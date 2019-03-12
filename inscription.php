@@ -1,4 +1,4 @@
-<?php	
+<?php
 	require_once "membre.php";
 	$mb = new membre();
 	if($mb->comptearebours()=='end')
@@ -14,7 +14,7 @@
 		$actiate2 = "form-control";
 	}
 
-	if (isset($_SESSION['err'])) 
+	if (isset($_SESSION['err']))
 	{
 		$nom = $_SESSION['nom'];
 		$postnom = $_SESSION['postnom'];
@@ -40,7 +40,7 @@
 		$_SESSION['error1'] = null;
 		$_SESSION['error2'] = null;
 		$_SESSION['error3'] = null;
-		$_SESSION['error4'] = null; 
+		$_SESSION['error4'] = null;
 		$_SESSION['error6'] = null;
 		$_SESSION['error5'] = null;
 		$_SESSION['error7'] = null;
@@ -170,9 +170,9 @@
 					<div class="form-group">
 						<input type="submit" value="Enregistrer" class="<?=$activate?>">
 					</div>
-					
+
 				</form>
-				
+
 			</div>
 		</div>
 	</div>

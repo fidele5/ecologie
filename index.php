@@ -8,7 +8,7 @@
 	</head>
 	<body class="is-preload">
 		<div id="page-wrapper">
-			<div class="row"> 
+			<div class="row">
 				<div class="col-md-6">
 
 					<!-- Header -->
@@ -16,7 +16,7 @@
 
 							<!-- Logo -->
                                 <h1><a href="ecologie.jpg" id="logo"> <img src="ecologie.jpg" alt="" width="60%"  /></a></h1>
-                                
+
 							<!-- Nav -->
 								<nav id="nav">
 									<ul>

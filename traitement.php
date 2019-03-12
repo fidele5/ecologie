@@ -34,20 +34,20 @@
 	$i = 0;
 	$control = new membre();
 	// verification du pseudo
-	if ($control->checkNom($nom) == "vide"){$_SESSION['error1'] = "vous n'avez pas entré de nom<br>"; $i++;} 
-	elseif ($control->checkNom($nom) == "court"){$_SESSION['error1'] = "votre nom ne doit pas avoir moins de 4 caracteres<br>"; $i++;} 
+	if ($control->checkNom($nom) == "vide"){$_SESSION['error1'] = "vous n'avez pas entré de nom<br>"; $i++;}
+	elseif ($control->checkNom($nom) == "court"){$_SESSION['error1'] = "votre nom ne doit pas avoir moins de 4 caracteres<br>"; $i++;}
 	elseif ($control->checkNom($nom) == "long"){$_SESSION['error1'] = "votre nom ne doit pas avoir plus de 64 caracteres<br>"; $i++;}
 	else $_SESSION['nom'] = $control->nom;
 
 	//verification du mpd
-	if ($control->checkPost($postnom) == "vide"){$_SESSION['error2'] = "vous n'avez pas entré de postnom<br>"; $i++;} 
-	elseif ($control->checkPost($postnom) == "court"){$_SESSION['error2'] = "votre postnom ne doit pas avoir moins de 4 caracteres<br>"; $i++;} 
+	if ($control->checkPost($postnom) == "vide"){$_SESSION['error2'] = "vous n'avez pas entré de postnom<br>"; $i++;}
+	elseif ($control->checkPost($postnom) == "court"){$_SESSION['error2'] = "votre postnom ne doit pas avoir moins de 4 caracteres<br>"; $i++;}
 	elseif ($control->checkPost($postnom) == "long"){$_SESSION['error2'] = "votre postnom ne doit pas avoir plus de 64 caracteres<br>"; $i++;}
 	else $_SESSION['postnom'] = $control->postnom;
 
 	//verification de l'email
-	if ($control->checkPre($prenom) == "vide"){$_SESSION['error3'] = "vous n'avez pas entré de prenom<br>"; $i++;} 
-	elseif ($control->checkPre($prenom) == "court"){$_SESSION['error3'] = "votre prenom ne doit pas avoir moins de 4 caracteres<br>"; $i++;} 
+	if ($control->checkPre($prenom) == "vide"){$_SESSION['error3'] = "vous n'avez pas entré de prenom<br>"; $i++;}
+	elseif ($control->checkPre($prenom) == "court"){$_SESSION['error3'] = "votre prenom ne doit pas avoir moins de 4 caracteres<br>"; $i++;}
 	elseif ($control->checkPre($prenom) == "long"){$_SESSION['error3'] = "votre prenom ne doit pas avoir plus de 64 caracteres<br>"; $i++;}
 	else $_SESSION['prenom'] = $control->prenom;
 
@@ -57,7 +57,7 @@
 	elseif ($control->checkmatr($matr) == "exists"){$_SESSION['error9'] = "<em>Le matricule que vous voulez utiliser appartient à quelqu'un d'autre</em><br>"; $i++;}
 	else
 		$_SESSION['matr'] = $control->matr;
-		
+
 	// verification de la promotion
 	if ($control->checkprom($prom) == "emptyprom"){$_SESSION['error10'] = "<em>Vous devez renseigner la promotion</em><br>"; $i++;}
 	elseif ($control->checkprom($prom) == "invalid") {$_SESSION['error10'] = "<em>Vous n'etes pas de cette promotion</em><br>"; $i++;}
@@ -65,10 +65,10 @@
 	else $_SESSION['prom'] = $control->prom;
 
 	//verification de l'email
-	if ($control->checkmail($email) == "vide" ){$_SESSION['error4'] = "Vous n'avez pas entré de mail<br>"; $i++;} 
-	elseif($control->checkmail($email) == "isnt"){$_SESSION['error4'] = "Le mail que vous avez entré n'a pas un format valide<br>"; $i++;} 
-	elseif($control->checkmail($email) == "exists"){$_SESSION['error4'] = "Le mail que vous voulez utiliser existe cherchez en un autre<br>";$i++;} 
-	elseif($control->checkmail($email) == "mamaee"){$_SESSION['error4'] = "C'est n'importe quoi ce email! il existe vraiment?!<br>";$i++;} 
+	if ($control->checkmail($email) == "vide" ){$_SESSION['error4'] = "Vous n'avez pas entré de mail<br>"; $i++;}
+	elseif($control->checkmail($email) == "isnt"){$_SESSION['error4'] = "Le mail que vous avez entré n'a pas un format valide<br>"; $i++;}
+	elseif($control->checkmail($email) == "exists"){$_SESSION['error4'] = "Le mail que vous voulez utiliser existe cherchez en un autre<br>";$i++;}
+	elseif($control->checkmail($email) == "mamaee"){$_SESSION['error4'] = "C'est n'importe quoi ce email! il existe vraiment?!<br>";$i++;}
 	else $_SESSION['email'] = $control->email;
 
 	// verification de la date de naissance
@@ -82,7 +82,7 @@
 	elseif ($control->motiv($motivation)=='short') {$_SESSION['error6'] = "Votre motivation doit avoir plus de 15 caracteres<br>"; $i++;}
 	else $_SESSION['motivation'] = $control->motivation;
 
-	// verification de la photo 
+	// verification de la photo
 	if($control->avatar($avatar) == 'long'){$_SESSION['error8'] = "le fichier depasse la limite autorisée sur le serveur<br>"; $i++;}
 	elseif($control->avatar($avatar) == 'grand'){$_SESSION['error8'] = "Le fichier dépasse la limite autorisée dans le formulaire HTML !<br>"; $i++;}
 	elseif($control->avatar($avatar) == 'echec'){$_SESSION['error8'] = "L'envoi du fichier a été interrompu pendant le transfert !<br>"; $i++;}
@@ -90,8 +90,8 @@
 	else $_SESSION['avatar'] = $control->avatar;
 
 	// verification du numero de telephone
-	if ($control->checktel($tel) == "empty"){$_SESSION['error7'] = "votre numero de telephone est incorrect<br>"; $i++;} 
-	elseif ($control->checktel($tel) == "short"){$_SESSION['error7'] = "votre numero de telephone ne doit pas avoir moins de 4 caracteres<br>"; $i++;} 
+	if ($control->checktel($tel) == "empty"){$_SESSION['error7'] = "votre numero de telephone est incorrect<br>"; $i++;}
+	elseif ($control->checktel($tel) == "short"){$_SESSION['error7'] = "votre numero de telephone ne doit pas avoir moins de 4 caracteres<br>"; $i++;}
 	elseif ($control->checktel($tel) == "long"){$_SESSION['error7'] = "votre numero de telephone ne doit pas avoir plus de 64 caracteres<br>"; $i++;}
 	else $_SESSION['tel'] = $control->tel;
 
@@ -102,10 +102,10 @@
 	else
 	{
 		$control->inserer();
-		header('location: page.php');
+		header('location: connexion.php');
 	}
 
-		
+
 	foreach ($_SESSION as $key => $value) {
 		echo $key.' : '.$value.'<br>';
 	}
