@@ -75,12 +75,12 @@ class membre
 		//elseif(!checkdnsrr($domaine, 'MX')) return 'mamaee';
 		else
 		{
-			try 
+			try
 			{
 				$connexion = new PDO("mysql:host=".$this->bd_nom_serveur.";dbname=".$this->bd_nom_bd."", $this->bd_login, $this->bd_mot_de_passe, null);
 			    $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			} 
-			catch (Exception $e) 
+			}
+			catch (Exception $e)
 			{
 				die('Erreur : ' . $e->getMessage());
 			}
@@ -97,7 +97,7 @@ class membre
 	public function verifdate($date)
 	{
 		if (empty($date)) return "vide";
-		else 
+		else
 		{
 			$annee = strtotime($date);
 			$an = date('Y', $annee);
@@ -127,23 +127,23 @@ class membre
         $header.= 'Cc: "Contact" <fideleplk@gmail.com>' . "\r\n";
         $header.= 'Bcc: "Contact" <fideleplk@yahoo.com>' . "\r\n";
         $sent = mail($email,$sujet,$message,$header);
-        if ($sent) 
+        if ($sent)
         {
             return true;
         }
 	}
-	
+
 	public function checkmatr($mat)
         {
             if (empty($mat)) return "emptymat";
             else
             {
-                try 
+                try
                 {
                     $connexion = new PDO("mysql:host=".$this->bd_nom_serveur.";dbname=".$this->bd_nom_bd."", $this->bd_login, $this->bd_mot_de_passe, null);
                     $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                } 
-                catch (Exception $e) 
+                }
+                catch (Exception $e)
                 {
                     die('Erreur : ' . $e->getMessage());
                 }
@@ -157,10 +157,10 @@ class membre
 					$resultat->bindValue(':matr',$mat, PDO::PARAM_STR);
 					$resultat->execute();
 					$matricule =($resultat->fetchColumn()==0)?1:0;
-					if(!$matricule) return "exists"; 
+					if(!$matricule) return "exists";
 					else $this->matr = $mat;
-					 
-				} 
+
+				}
                 else return "incorrect";
             }
         }
@@ -170,12 +170,12 @@ class membre
             if (empty($prom)) return "emptyprom";
             else
             {
-                try 
+                try
                 {
                     $connexion = new PDO("mysql:host=".$this->bd_nom_serveur.";dbname=".$this->bd_nom_bd."", $this->bd_login, $this->bd_mot_de_passe, null);
                     $connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                } 
-                catch (Exception $e) 
+                }
+                catch (Exception $e)
                 {
                     die('Erreur : ' . $e->getMessage());
                 }
@@ -210,21 +210,21 @@ class membre
 			    else
 			    {
 			        switch ($file['error'])
-			        {    
-			                case 1: // UPLOAD_ERR_INI_SIZE    
-			                return "long";    
-			                break;    
-			                case 2: // UPLOAD_ERR_FORM_SIZE    
+			        {
+			                case 1: // UPLOAD_ERR_INI_SIZE
+			                return "long";
+			                break;
+			                case 2: // UPLOAD_ERR_FORM_SIZE
 			                return "grand";
-			                break;    
-			                case 3: // UPLOAD_ERR_PARTIAL    
-			                return "echec";    
-			                break;    
-			                case 4: // UPLOAD_ERR_NO_FILE    
+			                break;
+			                case 3: // UPLOAD_ERR_PARTIAL
+			                return "echec";
+			                break;
+			                case 4: // UPLOAD_ERR_NO_FILE
 			                return "vide";
-			                break;    
-			        }    
-			    }    
+			                break;
+			        }
+			    }
 			}
 		}
 
@@ -249,12 +249,12 @@ class membre
 	// insertion dans la base des données
 	public function inserer()
 	{
-		try 
+		try
 		{
 			$connexion = new PDO("mysql:host=".$this->bd_nom_serveur.";dbname=".$this->bd_nom_bd."", $this->bd_login, $this->bd_mot_de_passe, null);
 			$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} 
-		catch (Exception $e) 
+		}
+		catch (Exception $e)
 		{
 			die('Erreur : ' . $e->getMessage());
 		}
@@ -277,12 +277,12 @@ class membre
 
 	public function getAllmembers()
 	{
-		try 
+		try
 		{
 			$connexion = new PDO("mysql:host=".$this->bd_nom_serveur.";dbname=".$this->bd_nom_bd."", $this->bd_login, $this->bd_mot_de_passe, null);
 			$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} 
-		catch (Exception $e) 
+		}
+		catch (Exception $e)
 		{
 			die('Erreur : ' . $e->getMessage());
 		}
@@ -301,12 +301,12 @@ class membre
 
 	public function getall($prom)
 	{
-		try 
+		try
 		{
 			$connexion = new PDO("mysql:host=".$this->bd_nom_serveur.";dbname=".$this->bd_nom_bd."", $this->bd_login, $this->bd_mot_de_passe, null);
 			$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} 
-		catch (Exception $e) 
+		}
+		catch (Exception $e)
 		{
 			die('Erreur : ' . $e->getMessage());
 		}
@@ -320,12 +320,12 @@ class membre
 
 	public function Verifin($prom)
 	{
-		try 
+		try
 		{
 			$connexion = new PDO("mysql:host=".$this->bd_nom_serveur.";dbname=".$this->bd_nom_bd."", $this->bd_login, $this->bd_mot_de_passe, null);
 			$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} 
-		catch (Exception $e) 
+		}
+		catch (Exception $e)
 		{
 			die('Erreur : ' . $e->getMessage());
 		}
@@ -334,7 +334,7 @@ class membre
 		$result->bindValue(':prom', $prom, PDO::PARAM_STR);
 		$result->execute();
 		$aff = $result->fetchColumn();
-		$pourc = ($aff/$this->getall($prom))*100; 
+		$pourc = ($aff/$this->getall($prom))*100;
 		if($pourc > 20){
 			return 'full';
 		}
@@ -342,12 +342,12 @@ class membre
 
 	public function connexion($matr)
 	{
-		try 
+		try
 		{
 			$connexion = new PDO("mysql:host=".$this->bd_nom_serveur.";dbname=".$this->bd_nom_bd."", $this->bd_login, $this->bd_mot_de_passe, null);
 			$connexion -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		} 
-		catch (Exception $e) 
+		}
+		catch (Exception $e)
 		{
 			die('Erreur : ' . $e->getMessage());
 		}
@@ -357,14 +357,14 @@ class membre
 		$connect->execute();
 		$val = $connect->fetch();
 
-		if ($val['membre_matricule'] = $matr) 
+		if ($val['membre_matricule'] == $matr)
 		{
 			$_SESSION['pseudo'] = $val['membre_prenom'];
 			$_SESSION['id'] = $val['membre_id'];
 		}
 		else
 			return "error";
-		
+
 	}
 
 	public function comptearebours()
@@ -374,7 +374,7 @@ class membre
         if ($fin <= time()) return "end";
 		else
 		{
-            $tps_restant = $fin - time(); 
+            $tps_restant = $fin - time();
             $i_restantes = $tps_restant / 60;
             $H_restantes = $i_restantes / 60;
             $d_restants = $H_restantes / 24;
